@@ -2,8 +2,8 @@ node {
     try{
         emailext body: "starting... BID $BUILD_ID, my mail is kicking alright.", subject: "Hallo, I\'m Kiching", to: "kehinde.adewusi@gmail.com"
         stage('checkout') {
-            // checkout scm
-            git 'https://github.com/kehindeadewusi/experimento.git'
+            checkout scm
+            //git 'https://github.com/kehindeadewusi/experimento.git'
         }
         stage('build'){
             sh label: '', script: 'mvn clean verify'
